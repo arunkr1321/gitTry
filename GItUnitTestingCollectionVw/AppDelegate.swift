@@ -6,6 +6,8 @@
 //  Copyright © 2018 Guest User. All rights reserved.
 //
 
+//modified core data for ioS 10 and below
+
 import UIKit
 import CoreData
 
