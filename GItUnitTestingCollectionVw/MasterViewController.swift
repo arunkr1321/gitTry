@@ -41,10 +41,19 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
     @objc
     func insertNewObject(_ sender: Any) {
         let context = self.fetchedResultsController.managedObjectContext
-        let newEvent = Event(context: context)
+        
+        if #available(iOS 10.0, *){
+             let newEvent = Event(context: context)
+            
+        }
+        else{
+            let newEvent = NSEntityDescription.insertNewObject(forEntityName:"Event", into: context)
+            
+        }
+       
              
         // If appropriate, configure the new managed object.
-        newEvent.timestamp = Date()
+       // newEvent.timestamp = Date()
 
         // Save the context.
         do {
